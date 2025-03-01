@@ -20,7 +20,7 @@ from train_and_eval import run_transductive, run_inductive
 
 def get_args():
     parser = argparse.ArgumentParser(description="PyTorch DGL implementation")
-    parser.add_argument("--device", type=int, default=7, help="CUDA device, -1 means CPU")
+    parser.add_argument("--device", type=int, default=0, help="CUDA device, -1 means CPU")
     parser.add_argument("--seed", type=int, default=0, help="Random seed")
     parser.add_argument(
         "--log_level",
@@ -89,7 +89,7 @@ def get_args():
         default="./train.conf.yaml",
         help="Path to model configeration",
     )
-    parser.add_argument("--teacher", type=str, default="SAGE", help="Teacher model")
+    parser.add_argument("--teacher", type=str, default="GCN", help="Teacher model")
     parser.add_argument(
         "--num_layers", type=int, default=2, help="Model number of layers"
     )
